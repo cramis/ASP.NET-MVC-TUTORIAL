@@ -1,0 +1,46 @@
+﻿마이그레이션을 활성화함
+
+enable-migrations
+
+
+
+마이그레이션 초기화 설정
+
+add-migration 'InitialModel'
+
+
+고객 클래스 추가 후 
+
+add-migration InitialModel -force
+
+update-database
+
+
+고객 모델에서 속성 하나 추가 후
+
+add-migration AddIsSubscribedToCustomer
+
+update-database
+
+
+add-migration AddMembershipType
+
+update-database
+
+
+
+add-migration PopulateMembershipType
+
+만들어진 마이그레이션에 sql 문을 추가함
+
+Sql(@"Insert Into MembershipTypeㄴ (Id, SignUpFee, DurationInMonths, DiscountRate) values (1, 0, 0, 0)");
+
+update-database
+
+
+고객 이름 길이 변경
+
+
+add-migration ApplyAnnotationsToCustomerName
+
+update-database

@@ -14,11 +14,9 @@ namespace Vidly.Controllers
         
         public ActionResult Index()
         {
-            var movies = new List<Movie>{
-                new Movie { Name = "Movie 1" },
-                new Movie { Name = "Movie 2" }
-            };
-            
+            var movies = GetMovies();
+
+
             return View(movies);
         }
 
@@ -26,12 +24,9 @@ namespace Vidly.Controllers
         // GET: Movies
         public ActionResult Random()
         {
-            var movie = new Movie() { Name = "슈렉" };
+            var movie = GetMovie();
 
-            var customers = new List<Customer>{
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
-            };
+            var customers = GetCustomers();
 
             var viewModel = new RandomMovieViewModel
             {
@@ -56,7 +51,50 @@ namespace Vidly.Controllers
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleaseYear(int year, int month)
         {
-            return Content("Route Attribute : " + year + "/" + month);
+            return Content("Route Attribute : " + year +
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                "/" + month);
+        }
+
+
+        Movie GetMovie()
+        {
+            return new Movie { Name = "Movie 1" };
+        }
+
+
+        List<Movie> GetMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie { Name = "Movie 1" },
+                new Movie { Name = "Movie 2" }
+            };
+        }
+
+
+        List<Customer> GetCustomers()
+        {
+            return new List<Customer>
+            {
+                new Customer { Name = "Customer 1" },
+                new Customer { Name = "Customer 2" }
+            };
         }
     }
 }

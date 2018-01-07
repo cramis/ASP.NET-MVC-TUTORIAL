@@ -187,17 +187,39 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801070603323_InitialModel.cs" />
+    <Compile Include="Migrations\201801070603323_InitialModel.Designer.cs">
+      <DependentUpon>201801070603323_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801070614262_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201801070614262_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201801070614262_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801070620020_AddMembershipType.cs" />
+    <Compile Include="Migrations\201801070620020_AddMembershipType.Designer.cs">
+      <DependentUpon>201801070620020_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801070621509_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\201801070621509_PopulateMembershipType.Designer.cs">
+      <DependentUpon>201801070621509_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801070631466_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201801070631466_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201801070631466_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -263,10 +285,11 @@
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -280,6 +303,23 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801070603323_InitialModel.resx">
+      <DependentUpon>201801070603323_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801070614262_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201801070614262_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801070620020_AddMembershipType.resx">
+      <DependentUpon>201801070620020_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801070621509_PopulateMembershipType.resx">
+      <DependentUpon>201801070621509_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801070631466_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201801070631466_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

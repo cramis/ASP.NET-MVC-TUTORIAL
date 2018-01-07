@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Vidly.Models.Customer>
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>고객</h2>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>고객명</th>
+                <th>할인율</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
+                    <td>@customer.MembershipType.DiscountRate%</td>
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+</div>
