@@ -44,3 +44,18 @@ update-database
 add-migration ApplyAnnotationsToCustomerName
 
 update-database
+
+
+
+멤버십 이름 추가
+
+
+add-migration AddMembershipName
+
+update-database
+
+고객 생일 추가
+
+add-migration AddBirthdayToCustomer
+
+update-database

@@ -12,7 +12,7 @@
         <thead>
             <tr>
                 <th>고객명</th>
-                <th>할인율</th>
+                <th>멤버십</th>
             </tr>
         </thead>
         
@@ -21,7 +21,7 @@
             {
                 <tr>
                     <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
-                    <td>@customer.MembershipType.DiscountRate%</td>
+                    <td>@customer.MembershipType.Name</td>
                 </tr>
             }
         </tbody>
