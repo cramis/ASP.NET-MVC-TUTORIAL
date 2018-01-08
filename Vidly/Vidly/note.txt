@@ -59,3 +59,50 @@ update-database
 add-migration AddBirthdayToCustomer
 
 update-database
+
+
+
+
+영화 컬럼들 추가
+
+add-migration InitialModel -force
+
+update-database
+
+영화 등급 추가
+
+add-migration AddRateToMovie
+
+update-database
+
+
+
+영화 남아있는갯수 추가
+
+add-migration AddStockToMovie
+
+update-database
+
+
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (1, N'액션')
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (2, N'드라마')
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (3, N'코미디')
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (4, N'로맨틱')
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (5, N'스릴러')
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (6, N'호러')
+INSERT INTO [dbo].[Genres] ([Id], [Name]) VALUES (7, N'에로')
+
+INSERT INTO [dbo].[Rates] ([Id], [Name]) VALUES (1, N'전체 관람가')
+INSERT INTO [dbo].[Rates] ([Id], [Name]) VALUES (2, N'12세 이상 관람가')
+INSERT INTO [dbo].[Rates] ([Id], [Name]) VALUES (3, N'15세 이상 관람가')
+INSERT INTO [dbo].[Rates] ([Id], [Name]) VALUES (4, N'19세 이상 관람가')
+
+SET IDENTITY_INSERT [dbo].[Movies] ON
+INSERT INTO [dbo].[Movies] ([Id], [Name], [GenreId], [DateAdded], [ReleaseDate], [RateVal], [Rate_Id]) VALUES (1, N'다이하드', 1, N'1984-10-01 00:00:00', N'2001-01-01 00:00:00', 0, 4)
+INSERT INTO [dbo].[Movies] ([Id], [Name], [GenreId], [DateAdded], [ReleaseDate], [RateVal], [Rate_Id]) VALUES (2, N'슈렉', 2, N'2001-04-05 00:00:00', N'2010-04-01 00:00:00', 0, 1)
+INSERT INTO [dbo].[Movies] ([Id], [Name], [GenreId], [DateAdded], [ReleaseDate], [RateVal], [Rate_Id]) VALUES (3, N'쇼생크탈출', 3, N'1997-04-01 00:00:00', N'2002-05-01 00:00:00', 0, 3)
+SET IDENTITY_INSERT [dbo].[Movies] OFF
+
+
+
+

@@ -9,16 +9,21 @@
 
 <div>
     <table class="table">
-        <tr>
-            <th>영화제목</th>
-            
-        </tr>
+        <thead>
+            <tr>
+                <th>영화제목</th>
+                <th>장르</th>
+                <th>등급</th>
+            </tr>
+        </thead>
         <tbody>
             @foreach (var movie in Model)
     {
-        <tr>
-            <td>@movie.Name</td>
-        </tr>
+            <tr>
+                <td>@Html.ActionLink(movie.Name, "Detail", "Movies", new { id = movie.Id }, null)</td>
+                <td>@movie.Genre.Name</td>
+                <td>@movie.Rate.Name</td>
+            </tr>
 }
         </tbody>
         
